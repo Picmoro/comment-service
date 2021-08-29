@@ -27,7 +27,7 @@ app.post('/posts/:id/comments', async (req, res) => {
     commentsByPostId[req.params.id] = comments;
     console.log(`Created: ${JSON.stringify(comment)}`.bgYellow.black);
     try {
-        console.log(`Echo event: type: "CommentCreated" data: ${JSON.stringify(posts)}`.bgYellow.black);
+        console.log(`Echo event: type: "CommentCreated" data: ${JSON.stringify(comment)}`.bgYellow.black);
         await axios.post("http://localhost:4005/events", {
             type: "CommentCreated",
             data: {
