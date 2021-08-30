@@ -41,6 +41,11 @@ app.post('/posts/:id/comments', async (req, res) => {
     res.status(201).send(comments);
 })
 
+app.post('/events', (req, res) => {
+    console.log(`Received event: type: ${req.body.type} data: ${JSON.stringify(req.body.data)}`.bgYellow.black);
+    res.send({});
+})
+
 app.listen(4001, () => {
     console.info("\n" +
         " ██████  ██████  ███    ███ ███    ███ ███████ ███    ██ ████████       ███████ ███████ ██████  ██    ██ ██  ██████ ███████ \n" +
